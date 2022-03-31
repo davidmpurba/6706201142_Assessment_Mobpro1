@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Temperature_converter</string>
-    <string name="judul">Temperature Converter\nPilih satuan suhu awal dan hasil convert adalah 2 suhu lainnya\n C=celcius K=Kelvin F=Fahrenheit</string>
-    <string name="jenis_termometer">Jenis Termometer(C/K/F) </string>
+    <string name="judul">Temperature Converter\nPilih satuan suhu awal dan hasil convert akan memunculkan nilai 2 suhu lainnya\n C=celcius K=Kelvin F=Fahrenheit</string>
+    <string name="jenis_termometer">Input nilai</string>
     <string name="fahrenheit">Fahrenheit</string>
     <string name="celsius">Celsius</string>
     <string name="kelvin">Kelvin</string>

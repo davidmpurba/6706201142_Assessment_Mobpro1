@@ -55,8 +55,7 @@ class MainActivity : AppCompatActivity() {
                 val fToKelvin = 5.0/9.0 * (nilai.toFloat() - 32) + 273.15
                 binding.hasil1.text = getString(R.string.hasil_convert1,fToCelsi)
                 binding.hasil2.text = getString(R.string.hasil_convert2,fToKelvin)
-            }
-            if (selectedId == R.id.kelvin){
+            } else {
                 val kToCelsi= nilai.toFloat() - 273.15
                 val kToFahren = 9.0/5.0 * (nilai.toFloat() - 273.15) + 32
                 binding.hasil1.text = getString(R.string.hasil_convert1,kToCelsi)

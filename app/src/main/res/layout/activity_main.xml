@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/deskripsi_Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/judul"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -33,7 +38,10 @@
             android:id="@+id/nilaiSuhu_inp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/jenis_termometer"/>
+            android:hint="@string/jenis_termometer"
+            android:textColorHint="#000000"
+            android:inputType="number"
+            tools:ignore="TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,29 +89,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/hasil2"
+        app:layout_constraintStart_toStartOf="@+id/hasil1"
+        app:layout_constraintTop_toBottomOf="@+id/convert" />
 
     <TextView
         android:id="@+id/hasil1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:textSize="14sp"
+        android:layout_marginTop="45dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/convert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/convert"
-        tools:text="Kelvin = °C + 273,15\nKelvin = 20°" />
+        tools:text="Kelvin = 20°" />
 
     <TextView
         android:id="@+id/hasil2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="20dp"
-        android:textSize="14sp"
-        tools:text="Fahrenheit = °C * 1,8 + 32\nFahrenheit = 20°"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/convert" />
+        app:layout_constraintStart_toEndOf="@+id/convert"
+        app:layout_constraintTop_toBottomOf="@+id/convert"
+        tools:text="Fahrenheit = 20°" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="70dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/hasil2"
+        app:layout_constraintStart_toStartOf="@+id/hasil1"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
     <Button
         android:id="@+id/reset"
@@ -115,4 +143,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/convert" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
