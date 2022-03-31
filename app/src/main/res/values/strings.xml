@@ -6,6 +6,7 @@
     <string name="celsius">Celsius</string>
     <string name="kelvin">Kelvin</string>
     <string name="convert">Convert</string>
+    <string name="reset">Reset</string>
     <string name="hasil_convert1">Celsius = %1$.2f</string>
     <string name="hasil_convert2">Kelvin = %1$.2f</string>
     <string name="hasil_convert3">Fahrenheit = %1$.2f</string>

@@ -19,9 +19,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.convert.setOnClickListener { hasilSuhu() }
+        binding.reset.setOnClickListener { resetSuhu() }
 
     }
 
+    private fun resetSuhu(){
+        binding.nilaiSuhuInp.text = null
+        binding.radioGroup.clearCheck()
+        binding.hasil1.text = null
+        binding.hasil2.text = null
+    }
 
     private  fun hasilSuhu() {
 
