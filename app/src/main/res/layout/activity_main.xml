@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputSuhu_hint"
+        android:id="@+id/nilaiSuhu_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -30,6 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/deskripsi_Text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nilaiSuhu_inp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/jenis_termometer"/>
@@ -44,14 +45,14 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSuhu_hint">
+        app:layout_constraintTop_toBottomOf="@+id/nilaiSuhu_hint">
 
         <RadioButton
             android:id="@+id/celcius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/celcius"
+            android:text="@string/celsius"
             android:layout_marginEnd="10dp"/>
 
         <RadioButton
@@ -82,23 +83,25 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/hasil1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/hasil_convert1"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/convert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/convert" />
+        app:layout_constraintTop_toBottomOf="@+id/convert"
+        tools:text="Kelvin = °C + 273,15\nKelvin = 20°" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/hasil2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/hasil_convert2"
+        android:textSize="14sp"
+        tools:text="Fahrenheit = °C * 1,8 + 32\nFahrenheit = 20°"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/convert" />
 
