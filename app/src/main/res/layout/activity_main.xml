@@ -11,14 +11,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    z
+
     <TextView
         android:id="@+id/deskripsi_Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/crete_round"
         android:text="@string/judul"
         android:textAlignment="center"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,25 +63,34 @@
             android:id="@+id/celcius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:fontFamily="@font/kite_one"
             android:text="@string/celsius"
-            android:layout_marginEnd="10dp"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/fahrenheit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:fontFamily="@font/kite_one"
             android:text="@string/fahrenheit"
-            android:layout_marginEnd="10dp" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/kelvin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:fontFamily="@font/kite_one"
             android:text="@string/kelvin"
-            android:layout_marginEnd="10dp"/>
+            tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
     <Button
@@ -86,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/convert"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -139,6 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:text="@string/reset"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/convert"
         app:layout_constraintStart_toStartOf="@+id/convert"
         app:layout_constraintTop_toBottomOf="@+id/convert" />
