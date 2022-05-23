@@ -17,5 +17,7 @@
     <string name="bagikan_template">Celsius = %1$.2f\nKelvin = %1$.2f\nFahrenheit = %1$.2f</string>
     <string name="history">History</string>
     <string name="bagikan">Bagikan</string>
+    <string name="belum_ada_data">Belum ada data</string>
+    <string name="histori">History</string>
 
 </resources>

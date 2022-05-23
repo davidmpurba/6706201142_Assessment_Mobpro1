@@ -11,8 +11,8 @@ data class ConvertorEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0L,
     var tanggal: Long = System.currentTimeMillis(),
-    var nilai: Float,
-    var selectedId: SelectedId,
-    var hasilConvert: HasilConvert
+    var hasilCelcius: Float,
+    var hasilFahrenheit: Float,
+    var hasilKelvin: Float
 
     )
