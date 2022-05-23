@@ -12,5 +12,6 @@
     <string name="hasil_convert3">Fahrenheit = %1$.2f</string>
     <string name="nilai_invalid">Nilai tidak boleh kosong</string>
     <string name="jenis_invalid">Jenis tidak boleh kosong</string>
+    <string name="copyright">Temperature Convertor merupakan sebuah aplikasi android yang berguna untuk convert suatu suhu ke jenis suhu lainnya.\n\nTemukan kodenya di https://github.com/davidmpurba/6706201142_Assessment_Mobpro1 \n\nCopyright @ 2022 David Marsen Purba..\nAll rights reserved. </string>
 
 </resources>
