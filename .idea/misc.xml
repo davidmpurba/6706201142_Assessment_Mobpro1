@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/layout/fragment_about.xml" value="0.1" />
-        <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/layout/fragment_hitung.xml" value="0.176" />
+        <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/layout/fragment_about.xml" value="0.264" />
+        <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/layout/fragment_hitung.xml" value="0.264" />
+        <entry key="..\:/Users/dmp/AndroidStudioProjects/Temperature_converter/app/src/main/res/menu/options_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

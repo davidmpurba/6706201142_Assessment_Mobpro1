@@ -1,14 +1,14 @@
 package org.d3if1142.temperature_converter.ui
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import org.d3if1142.temperature_converter.R
 import org.d3if1142.temperature_converter.databinding.FragmentHitungBinding
 import org.d3if1142.temperature_converter.model.HasilConvert
@@ -22,10 +22,25 @@ class HitungFragment : Fragment() {
         ViewModelProvider(requireActivity())[HitungViewModel::class.java]
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_about) {
+            findNavController().navigate(
+                R.id.action_hitungFragment_to_aboutFragment)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         binding = FragmentHitungBinding.inflate(layoutInflater,container,false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 //    (savedInstanceState: Bundle?) {
@@ -45,8 +60,19 @@ class HitungFragment : Fragment() {
         binding.convert.setOnClickListener { hasilSuhu() }
         binding.reset.setOnClickListener { resetSuhu() }
         viewModel.getHasilConvert().observe(requireActivity(), {showResult(it)})
+        binding.bagikan.setOnClickListener { shareData() }
     }
 
+    private fun shareData(){
+        val selectedId = binding.radioGroup.checkedRadioButtonId
+        val message = getString(R.string.bagikan_template)
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT,message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
+    }
 
     private fun resetSuhu(){
         binding.nilaiSuhuInp.text = null
@@ -94,6 +120,7 @@ class HitungFragment : Fragment() {
             binding.hasil1.text = getString(R.string.hasil_convert1,result.hasilCelcius)
             binding.hasil2.text = getString(R.string.hasil_convert2,result.hasilFahrenheit)
         }
+        binding.bagikan.visibility = View.VISIBLE
 
     }
 
