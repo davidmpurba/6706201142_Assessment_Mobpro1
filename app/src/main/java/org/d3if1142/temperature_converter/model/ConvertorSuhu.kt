@@ -7,7 +7,7 @@ import org.d3if1142.temperature_converter.db.ConvertorEntity
 
 fun ConvertorEntity.hasilsuhu(): HasilConvert? {
     if (selectedId == R.id.celcius){
-        val cToFahren = 9.0 / 5.0 *  + 32
+        val cToFahren = 9.0 / 5.0 * nilai + 32
         val cToKelvin = nilai + 273.15f
         return HasilConvert(nilai,cToFahren.toFloat(),cToKelvin,selectedId)
     }

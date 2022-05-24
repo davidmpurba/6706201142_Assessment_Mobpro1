@@ -26,7 +26,7 @@ class HitungViewModel(private val db: ConvertorDao): ViewModel() {
             val dataConvert = ConvertorEntity(
                 nilai = nilai,
                 hasilCelcius = nilai,
-                hasilFahrenheit = (9.0 / 5.0 * nilai + 32).toFloat(),
+                hasilFahrenheit = ((9.0 / 5.0 * nilai) + 32).toFloat(),
                 hasilKelvin = nilai + 273.15f,
                 selectedId = selectedId
             )
