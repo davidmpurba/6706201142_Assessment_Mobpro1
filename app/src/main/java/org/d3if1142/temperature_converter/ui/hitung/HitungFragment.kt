@@ -48,27 +48,32 @@ class HitungFragment : Fragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentHitungBinding.inflate(layoutInflater,container,false)
+        binding = FragmentHitungBinding.inflate(layoutInflater)
         setHasOptionsMenu(true)
+        binding.convert.setOnClickListener { hasilSuhu() }
+        binding.reset.setOnClickListener { resetSuhu() }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.convert.setOnClickListener { hasilSuhu() }
-        binding.reset.setOnClickListener { resetSuhu() }
         viewModel.getHasilConvert().observe(requireActivity()) { showResult(it) }
         binding.bagikan.setOnClickListener { shareData() }
-        viewModel.data.observe(viewLifecycleOwner) {
-            if (it == null) return@observe
-            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
-        }
+
     }
 
     private fun shareData(){
+
         val selectedId = binding.radioGroup.checkedRadioButtonId
-        val message = getString(R.string.bagikan_template)
+        val message = getString(R.string.bagikan_template,
+            viewModel.getHasilConvert().value!!.hasilCelcius,
+            viewModel.getHasilConvert().value!!.hasilFahrenheit,
+            viewModel.getHasilConvert().value!!.hasilKelvin)
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT,message)
         if (shareIntent.resolveActivity(
@@ -99,7 +104,7 @@ class HitungFragment : Fragment() {
                 return
 
             }
-             viewModel.hasilSuhu(nilai.toFloat(),selectedId)
+             viewModel.hasilSuhu(nilai.toFloat(), selectedId)
 
 
     }

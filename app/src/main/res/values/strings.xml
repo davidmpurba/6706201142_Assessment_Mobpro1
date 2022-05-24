@@ -14,10 +14,18 @@
     <string name="jenis_invalid">Jenis tidak boleh kosong</string>
     <string name="copyright">Temperature Convertor merupakan sebuah aplikasi android yang berguna untuk convert suatu suhu ke jenis suhu lainnya.\n\nTemukan kodenya di https://github.com/davidmpurba/6706201142_Assessment_Mobpro1 \n\nCopyright @ 2022 David Marsen Purba..\nAll rights reserved. </string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="bagikan_template">Celsius = %1$.2f\nKelvin = %1$.2f\nFahrenheit = %1$.2f</string>
+    <string name="bagikan_template">Celsius = %1$.2f\nKelvin = %2$.2f\nFahrenheit = %3$.2f</string>
     <string name="history">History</string>
     <string name="bagikan">Bagikan</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="histori">History</string>
+    <string name="hasil_c">Celsius = %1$.2f</string>
+    <string name="hasil_f">Fahrenheit = %1$.2f</string>
+    <string name="hasil_k">Kelvin = %1$.2f</string>
+    <string name="hapus_histori">Hapus history</string>
+    <string name="konfirmasi_hapus">Hapus semua history</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
+    <string name="hasil_convert">Hasil Convert</string>
 
 </resources>

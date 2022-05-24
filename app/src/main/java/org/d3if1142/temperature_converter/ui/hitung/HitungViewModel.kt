@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.d3if1142.temperature_converter.R
 import org.d3if1142.temperature_converter.db.ConvertorDao
-import org.d3if1142.temperature_converter.db.ConvertorDb
 import org.d3if1142.temperature_converter.db.ConvertorEntity
 import org.d3if1142.temperature_converter.model.HasilConvert
+import org.d3if1142.temperature_converter.model.hasilsuhu
 
 class HitungViewModel(private val db: ConvertorDao): ViewModel() {
 
@@ -19,55 +19,59 @@ class HitungViewModel(private val db: ConvertorDao): ViewModel() {
 
     fun getHasilConvert(): LiveData<HasilConvert?> = hasilConvert
 
-    val  data = db.getLastHasilConvert()
-
     fun hasilSuhu(nilai: Float, selectedId: Int){
 
         if (selectedId == R.id.celcius){
-            val cToFahren = 9.0 / 5.0 * nilai + 32
-            val cToKelvin = nilai + 273.15f
-            hasilConvert.value =  HasilConvert(nilai,cToFahren.toFloat(),cToKelvin)
+
+            val dataConvert = ConvertorEntity(
+                nilai = nilai,
+                hasilCelcius = nilai,
+                hasilFahrenheit = (9.0 / 5.0 * nilai + 32).toFloat(),
+                hasilKelvin = nilai + 273.15f,
+                selectedId = selectedId
+            )
+
+            hasilConvert.value =  dataConvert.hasilsuhu()
 
             viewModelScope.launch {
                 withContext(Dispatchers.IO){
-                    val dataHasilConvert = ConvertorEntity(
-                        hasilCelcius = nilai,
-                        hasilFahrenheit = cToFahren.toFloat(),
-                        hasilKelvin = cToKelvin
-                    )
-                    db.insert(dataHasilConvert)
+                    db.insert(dataConvert)
                 }
             }
         }
         if (selectedId == R.id.fahrenheit){
             val fToCelsi = 5.0 / 9.0 * (nilai - 32)
             val fToKelvin = 5.0 / 9.0 * (nilai - 32) + 273.15
-            hasilConvert.value =  HasilConvert(fToCelsi.toFloat(),nilai,fToKelvin.toFloat())
+            val dataConvert = ConvertorEntity(
+                nilai = nilai,
+                hasilCelcius = fToCelsi.toFloat(),
+                hasilFahrenheit = nilai,
+                hasilKelvin = fToKelvin.toFloat(),
+                selectedId = selectedId
+            )
+            hasilConvert.value =  dataConvert.hasilsuhu()
 
             viewModelScope.launch {
                 withContext(Dispatchers.IO){
-                    val dataHasilConvert = ConvertorEntity(
-                        hasilCelcius = fToCelsi.toFloat(),
-                        hasilFahrenheit = nilai,
-                        hasilKelvin = fToKelvin.toFloat()
-                    )
-                    db.insert(dataHasilConvert)
+                    db.insert(dataConvert)
                 }
             }
         }
         if(selectedId == R.id.kelvin){
             val kToCelsi = nilai - 273.15
             val kToFahren = 9.0 / 5.0 * (nilai - 273.15) + 32
-            hasilConvert.value =   HasilConvert(kToCelsi.toFloat(),kToFahren.toFloat(),nilai)
 
+            val dataConvert = ConvertorEntity(
+                nilai = nilai,
+                hasilCelcius = kToCelsi.toFloat(),
+                hasilFahrenheit = kToFahren.toFloat(),
+                hasilKelvin = nilai,
+                selectedId = selectedId
+            )
+            hasilConvert.value =  dataConvert.hasilsuhu()
             viewModelScope.launch {
                 withContext(Dispatchers.IO){
-                    val dataHasilConvert = ConvertorEntity(
-                        hasilCelcius = kToCelsi.toFloat(),
-                        hasilFahrenheit = kToFahren.toFloat(),
-                        hasilKelvin = nilai
-                    )
-                    db.insert(dataHasilConvert)
+                    db.insert(dataConvert)
                 }
             }
         }
