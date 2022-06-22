@@ -6,4 +6,5 @@
     android:autoLink="web"
     android:text="@string/copyright">
 
+
 </TextView>

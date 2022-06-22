@@ -15,6 +15,7 @@ class MainFragment: Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         return binding.root
+
     }
 
 

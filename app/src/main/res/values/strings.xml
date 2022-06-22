@@ -27,5 +27,12 @@
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
     <string name="hasil_convert">Hasil Convert</string>
+    <string name="Rumus">Rumus Konversi</string>
+    <string name="about_me">Tentang Saya</string>
+    <string name="koneksi_error">Koneksi error</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update Info terbaru Temperature Convertor</string>
+    <string name="notif_title">Ayo gunakan lagi!</string>
+    <string name="notif_text">Convert ke semua jenis suhu..</string>
 
 </resources>

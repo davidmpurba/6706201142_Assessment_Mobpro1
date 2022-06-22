@@ -4,6 +4,10 @@
         android:id="@+id/menu_about"
         android:title="@string/tentang_aplikasi"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_aboutme"
+        android:title="@string/about_me"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/menu_histori"

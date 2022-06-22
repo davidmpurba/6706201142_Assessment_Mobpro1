@@ -43,6 +43,12 @@ class HitungFragment : Fragment() {
                     R.id.action_hitungFragment_to_aboutFragment)
                 return true
             }
+            R.id.menu_aboutme ->{
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_aboutMeFragment)
+                return true
+            }
+
         }
         return super.onOptionsItemSelected(item)
     }
@@ -59,11 +65,14 @@ class HitungFragment : Fragment() {
         binding.convert.setOnClickListener { hasilSuhu() }
         binding.reset.setOnClickListener { resetSuhu() }
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.getHasilConvert().observe(requireActivity()) { showResult(it) }
         binding.bagikan.setOnClickListener { shareData() }
+        viewModel.scheduleUpdater(requireActivity().application)
+
 
     }
 
