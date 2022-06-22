@@ -1,10 +1,10 @@
 package org.d3if1142.temperature_converter.ui.hitung
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import org.d3if1142.temperature_converter.R
 import org.d3if1142.temperature_converter.databinding.FragmentHitungBinding
-import org.d3if1142.temperature_converter.db.ConvertorDao
 import org.d3if1142.temperature_converter.db.ConvertorDb
 import org.d3if1142.temperature_converter.model.HasilConvert
 
@@ -76,9 +75,10 @@ class HitungFragment : Fragment() {
 
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private fun shareData(){
 
-        val selectedId = binding.radioGroup.checkedRadioButtonId
+        binding.radioGroup.checkedRadioButtonId
         val message = getString(R.string.bagikan_template,
             viewModel.getHasilConvert().value!!.hasilCelcius,
             viewModel.getHasilConvert().value!!.hasilFahrenheit,

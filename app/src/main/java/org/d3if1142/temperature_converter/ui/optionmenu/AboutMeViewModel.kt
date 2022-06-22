@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.d3if1142.temperature_converter.ApiStatus
-import org.d3if1142.temperature_converter.DataApi
+import org.d3if1142.temperature_converter.network.ApiStatus
+import org.d3if1142.temperature_converter.network.DataApi
 import org.d3if1142.temperature_converter.model.MyData
 import java.lang.Exception
 

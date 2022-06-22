@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import org.d3if1142.temperature_converter.ApiStatus
+import org.d3if1142.temperature_converter.network.ApiStatus
 import org.d3if1142.temperature_converter.databinding.FragmentAboutmeBinding
 
 class AboutmeFragment : Fragment()  {
@@ -38,9 +38,9 @@ class AboutmeFragment : Fragment()  {
                 .into(binding.photoprofil)
 
         }
-        viewModel.getStatus().observe(viewLifecycleOwner, {
+        viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
-        })
+        }
 
     }
     private fun updateProgress(status: ApiStatus) {

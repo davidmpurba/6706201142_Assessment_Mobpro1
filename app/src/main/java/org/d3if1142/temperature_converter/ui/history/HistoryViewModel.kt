@@ -7,7 +7,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.d3if1142.temperature_converter.db.ConvertorDao
 import org.d3if1142.temperature_converter.db.ConvertorEntity
-import org.d3if1142.temperature_converter.model.HasilConvert
 
 class HistoryViewModel(private val db: ConvertorDao):ViewModel() {
     val data = db.getLastHasilConvert()

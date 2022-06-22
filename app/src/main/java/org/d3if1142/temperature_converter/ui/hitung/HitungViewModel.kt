@@ -1,7 +1,6 @@
 package org.d3if1142.temperature_converter.ui.hitung
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,26 +1,16 @@
 package org.d3if1142.temperature_converter.ui.history
 
 
-import android.icu.text.SimpleDateFormat
-import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.sqlite.db.SupportSQLiteCompat.Api16Impl.cancel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.d3if1142.temperature_converter.R
 import org.d3if1142.temperature_converter.databinding.ItemHistoryBinding
-import org.d3if1142.temperature_converter.db.ConvertorDao
-import org.d3if1142.temperature_converter.db.ConvertorDb
 import org.d3if1142.temperature_converter.db.ConvertorEntity
 import org.d3if1142.temperature_converter.model.hasilsuhu
-import java.util.*
 
 class HistoryAdapter: ListAdapter<ConvertorEntity, HistoryAdapter.ViewHolder>(DIFF_CALLBACK) {
     companion object {

@@ -27,7 +27,7 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentHistoryBinding.inflate(layoutInflater,container, false)
         setHasOptionsMenu(true)

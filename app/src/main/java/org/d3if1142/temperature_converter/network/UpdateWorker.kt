@@ -1,9 +1,9 @@
 package org.d3if1142.temperature_converter.network
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.work.Worker
@@ -16,6 +16,7 @@ class UpdateWorker (context: Context, workerParams: WorkerParameters)
 
     private val notificationId = 44
 
+        @SuppressLint("UnspecifiedImmutableFlag")
         override fun doWork(): Result {
 
             val intent = Intent(applicationContext, MainActivity::class.java)

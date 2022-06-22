@@ -1,4 +1,4 @@
-package org.d3if1142.temperature_converter
+package org.d3if1142.temperature_converter.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
